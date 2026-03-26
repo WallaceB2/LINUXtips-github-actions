@@ -1,0 +1,25 @@
+name: Meu primeiro pipeline
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+      - stage
+
+jobs:
+  teste-inicial:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Baixar código do repositório
+        uses: actions/checkout@v5
+
+      - name: Mostrar mensagem
+        run: echo "GitHub Actions está funcionando"
+
+      - name: Mostrar branch atual
+        run: echo "Branch => ${{ github.ref_name }}"
+
+      - name: Listar arquivos
+        run: ls -la
