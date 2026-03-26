@@ -1,4 +1,4 @@
-name: Meu primeiro pipeline
+name: Pipeline Teste
 
 on:
   push:
@@ -12,11 +12,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout do código
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Mostrar mensagem
-        run: echo "GitHub Actions funcionando"
+      - run: echo "Pipeline rodando"
 
-      - name: Mostrar branch
-        run: echo "Branch atual: ${{ github.ref_name }}"
+      - run: echo "Branch atual: ${{ github.ref_name }}"
